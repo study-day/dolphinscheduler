@@ -630,6 +630,7 @@
                 <configuration>
                     <skip>${jacoco.skip}</skip>
                     <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                    <excludes>com/github/dreamhead/moco/*</excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -643,9 +644,6 @@
                         <goals>
                             <goal>restore-instrumented-classes</goal>
                         </goals>
-                        <configuration>
-                            <excludes>com/github/dreamhead/moco/*</excludes>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>default-report</id>
@@ -682,11 +680,11 @@
                     <skip>${spotless.skip}</skip>
                     <java>
                         <eclipse>
-                            <file>${maven.multiModuleProjectDirectory}/style/spotless_dolphinscheduler_formatter.xml</file>
+                            <file>style/spotless_dolphinscheduler_formatter.xml</file>
                         </eclipse>
                         <removeUnusedImports />
                         <importOrder>
-                            <file>${maven.multiModuleProjectDirectory}/style/eclipse.importorder</file>
+                            <file>style/eclipse.importorder</file>
                         </importOrder>
                         <replaceRegex>
                             <name>Remove wildcard imports</name>
